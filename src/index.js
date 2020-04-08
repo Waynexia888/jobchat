@@ -6,14 +6,9 @@ import { counter } from './index.redux'
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Link, Redirect, Switch } from 'react-router-dom';
+import Auth from './Auth';
+import Dashboard from './Dashboard';
 
-function Erying(){
-  return <h2>二营</h2>
-}
-
-function Qibinglian(){
-  return <h2>骑兵连</h2>
-}
 
 class Test extends React.Component{
   render(){
@@ -34,31 +29,22 @@ const store = createStore(
   )
 );
 
+// 登陆
+//     没有登陆信息， 统一跳转login
+// 页面 导航+显示+注销
+//     一营1
+//     二营
+//     骑兵连
 
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">一营</Link>
-          </li>
-          <li>
-            <Link to="/erying">二营</Link>
-          </li>
-          <li>
-            <Link to="/qibinglian">骑兵连</Link>
-          </li>
-        </ul>
-        {/* <Redirect to='/qibinglian'></Redirect> */}
-        <Switch>
-          <Route exact path="/" component={App}></Route>
-          <Route path="/erying" component={Erying}></Route>
-          <Route path="/qibinglian" component={Qibinglian}></Route>
-          <Route path="/:location" compoment={Test}></Route>
+      <Switch>
+          <Route exact path="/login" component={Auth}></Route>
+          <Route path="/dashboard" component={Dashboard}></Route>
+          <Redirect to='/dashboard'></Redirect>
         </Switch>
-      </div>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
