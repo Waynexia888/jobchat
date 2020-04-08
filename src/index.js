@@ -7,6 +7,9 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import Auth from './Auth';
 import Dashboard from './Dashboard';
 import reducers from './recuder';
+import './config';
+import 'antd-mobile/dist/antd-mobile.css';
+
 
 
 const store = createStore(
