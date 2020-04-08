@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { counter } from './index.redux'
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Link, Redirect, Switch } from 'react-router-dom';
 import Auth from './Auth';
 import Dashboard from './Dashboard';
+import reducers from './recuder';
 
 
 class Test extends React.Component{
@@ -20,7 +20,7 @@ class Test extends React.Component{
 }
 
 const store = createStore(
-  counter,
+  reducers,
   compose(
     applyMiddleware(thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__
