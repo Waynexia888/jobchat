@@ -18,10 +18,10 @@ function Qibinglian() {
 )
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props)
-    }
+ 
     render() {
+        const match = this.props.match
+        // console.log(match)
         const redirectTOLogin = <Redirect to='/login'></Redirect>
         const app = (
             <div>
@@ -32,13 +32,13 @@ class Dashboard extends Component {
                 }
                 <ul>
                 <li>
-                    <Link to="/dashboard/">一营</Link>
+                    <Link to={`${match.url}/`}>一营</Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/erying">二营</Link>
+                    <Link to={`${match.url}/erying`}>二营</Link>
                 </li>
                 <li>
-                    <Link to="/dashboard/qibinglian">骑兵连</Link>
+                    <Link to={`${match.url}/qibinglian`}>骑兵连</Link>
                 </li>
                 </ul>
                 <Route exact path='/dashboard/' component={App}></Route>
