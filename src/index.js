@@ -10,6 +10,7 @@ import './config';
 import 'antd-mobile/dist/antd-mobile.css';
 import Register from './container/register/register';
 import Login from './container/login/login';
+import AuthRoute from './component/authroute/authroute';
 
 
 const store = createStore(
@@ -27,6 +28,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
+        <AuthRoute></AuthRoute>
         <Route path='/login' component={Login}></Route>
         <Route path='/register' component={Register}></Route>
       </div>
