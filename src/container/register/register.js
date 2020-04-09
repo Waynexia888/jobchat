@@ -3,6 +3,9 @@ import Logo from '../../component/logo/logo';
 import { List, InputItem, Radio, WhiteSpace, Button} from 'antd-mobile';
 import { connect } from 'react-redux';
 import { register } from '../../redux/user.redux'
+import { Redirect } from 'react-router-dom';
+
+
 
 @connect(
     state => state.user,
@@ -15,12 +18,13 @@ class Register extends Component {
             user: '',
             pwd: '',
             repeatpwd: '',
-            type: 'genuis'
+            type: 'genius'
         }
         this.handleRegister = this.handleRegister.bind(this)  
     }
 
     handleChange(key, val) {
+        
         this.setState({
             [key]: val
         })
@@ -34,10 +38,12 @@ class Register extends Component {
         const RadioItem = Radio.RadioItem;
         return (
             <div>
+                {this.props.redirectTo ? <Redirect to={this.props.redirectTo} /> : null}
                 <Logo />
                 <h2>注册页面</h2>
                 <List>
                     {this.props.msg ? <p className='error-msg'>{this.props.msg}</p> : null}
+                    < WhiteSpace />
                     <InputItem onChange={(v) => this.handleChange('user', v)}>Username</InputItem>
                     <WhiteSpace />
                     <InputItem
@@ -49,7 +55,7 @@ class Register extends Component {
                         onChange={(v) => this.handleChange('repeatpwd', v)}>Confirm Password</InputItem>
                     <WhiteSpace />
                     <RadioItem 
-                        checked={this.state.type === 'genuis'}
+                        checked={this.state.type === 'genius'}
                         onChange={() => this.handleChange('type', 'genius')}
                     >
                         Job Seeker
