@@ -11,6 +11,7 @@ import 'antd-mobile/dist/antd-mobile.css';
 import Register from './container/register/register';
 import Login from './container/login/login';
 import AuthRoute from './component/authroute/authroute';
+import './index.css';
 
 
 const store = createStore(
