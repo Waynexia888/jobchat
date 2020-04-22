@@ -12,6 +12,7 @@ import Register from './container/register/register';
 import Login from './container/login/login';
 import AuthRoute from './component/authroute/authroute';
 import './index.css';
+import BossInfo from './container/bossinfo/bossinfo'
 
 
 const store = createStore(
@@ -34,7 +35,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <AuthRoute></AuthRoute>
-        <Route path='/boss' component={Boss}></Route>
+        <Route path='/bossinfo' component={BossInfo}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/register' component={Register}></Route>
       </div>
