@@ -13,7 +13,8 @@ import Login from './container/login/login';
 import AuthRoute from './component/authroute/authroute';
 import './index.css';
 import BossInfo from './container/bossinfo/bossinfo';
-import GeniusInfo from './container/geniusinfo/geniusinfo'
+import GeniusInfo from './container/geniusinfo/geniusinfo';
+import Dashboard from './component/dashboard/dashboard'
 
 
 const store = createStore(
@@ -26,9 +27,6 @@ const store = createStore(
   )
 );
 
-function Boss(){
-  return <h2>Boss页面</h2>
-}
 
 
 ReactDOM.render(
@@ -40,6 +38,7 @@ ReactDOM.render(
         <Route path='/geniusinfo' component={GeniusInfo}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/register' component={Register}></Route>
+        <Route component={Dashboard}></Route>
       </div>
     </BrowserRouter>
   </Provider>,
