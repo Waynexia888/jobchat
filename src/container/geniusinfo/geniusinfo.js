@@ -10,14 +10,12 @@ import { Redirect } from 'react-router-dom';
     {update}
 )
 
-class BossInfo extends Component {
+class GeniusInfo extends Component {
     constructor(props){
         super(props)
         this.state = {
             title: '',
-            desc: '',
-            company: '',
-            money: ''
+            desc: ''
         }
     }
 
@@ -33,7 +31,7 @@ class BossInfo extends Component {
             <div>
                 {redirect && redirect !== path ? <Redirect to={this.props.redirectTo}></Redirect> : null}
                 <NavBar mode="dark">
-                    Recuiter Information Form
+                    Job Seeker Information Form
                 </NavBar>
                 <AvatarSelector 
                     selectAvatar={(imgname) => {
@@ -42,21 +40,17 @@ class BossInfo extends Component {
                         })
                     }}
                 ></AvatarSelector>
-                <InputItem onChange={(v)=>this.onChange('title',v)}>
-                    Position
-                </InputItem>
-                <InputItem onChange={(v)=>this.onChange('company',v)}>
-                    Company
-                </InputItem>
-                <InputItem onChange={(v)=>this.onChange('money',v)}>
-                    Salary
+                <InputItem 
+                    labelNumber={8}
+                    onChange={(v)=>this.onChange('title',v)}>
+                    Expected Position
                 </InputItem>
                 <TextareaItem 
                     onChange={(v)=>this.onChange('desc',v)}
                     rows={3}
                     autoHeight
-                    title = 'Job Description'
-                    labelNumber={8}
+                    title = 'Personal Information'
+                    labelNumber={9}
                     >
                 </TextareaItem>
                 <Button 
@@ -69,4 +63,4 @@ class BossInfo extends Component {
     }
 }
 
-export default BossInfo
+export default GeniusInfo

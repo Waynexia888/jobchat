@@ -31,10 +31,10 @@ export function user(state=initState, action){
     }
 }
 
-export const authSuccess = (data) => ({
-    type: AUTH_SUCCESS,
-    payload: data,
-})
+export const authSuccess = (obj) => {
+    const {pwd, ...data} = obj
+    return {type: AUTH_SUCCESS, payload: data}
+}
 
 export const loadData = (userinfo) => ({
     type: LOAD_DATA,

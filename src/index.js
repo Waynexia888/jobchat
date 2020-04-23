@@ -12,7 +12,8 @@ import Register from './container/register/register';
 import Login from './container/login/login';
 import AuthRoute from './component/authroute/authroute';
 import './index.css';
-import BossInfo from './container/bossinfo/bossinfo'
+import BossInfo from './container/bossinfo/bossinfo';
+import GeniusInfo from './container/geniusinfo/geniusinfo'
 
 
 const store = createStore(
@@ -36,6 +37,7 @@ ReactDOM.render(
       <div>
         <AuthRoute></AuthRoute>
         <Route path='/bossinfo' component={BossInfo}></Route>
+        <Route path='/geniusinfo' component={GeniusInfo}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/register' component={Register}></Route>
       </div>
